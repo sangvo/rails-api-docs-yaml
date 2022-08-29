@@ -1,0 +1,5 @@
+# Post
+
+/posts:
+  post:
+    $ref: ./platform/accounts/create.yml

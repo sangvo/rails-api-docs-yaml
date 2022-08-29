@@ -1,0 +1,15 @@
+type: "object"
+required:
+  - id
+  - name
+  - title
+properties:
+  id:
+    type: integer
+    format: int64
+  name:
+    type: string
+  title:
+    type: string
+  content:
+    type: text

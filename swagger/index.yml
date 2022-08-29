@@ -1,0 +1,29 @@
+swagger: "2.0"
+info:
+  description: This is the API documentation for awesome server.
+  version: 1.0.0
+  title: API DOCS RAILS
+  contact:
+    email: hello@test.com
+  license:
+    name: MIT License
+    url: https://opensource.org/licenses/MIT
+host: localhost:3000
+basePath: /
+schemes:
+  - https
+produces:
+- application/json; charset=utf-8
+consumes:
+- application/json; charset=utf-8
+securityDefinitions:
+  userApiKey:
+    type: apiKey
+    in: header
+    name: api_access_token
+    description: Api key access token
+security:
+  - userApiKey: []
+
+definitions:
+  $ref: ./definitions/index.yml

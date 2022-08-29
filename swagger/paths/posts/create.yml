@@ -1,0 +1,20 @@
+tags:
+  - Posts
+operationId: create-an-post
+summary: Create an Post
+description: Create an Post
+security:
+  - userApiKey: []
+parameters:
+  - name: data
+    in: body
+    required: true
+    schema:
+      $ref: '#/definitions/create_post_payload'
+responses:
+  200:
+    description: Success
+    schema:
+      $ref: '#/definitions/create_post_payload'
+  401:
+    description: Unauthorized

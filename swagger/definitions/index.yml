@@ -1,0 +1,4 @@
+
+# Resource
+create_post_payload:
+  refs: "./resource/post.yml"

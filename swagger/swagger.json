@@ -283,6 +283,42 @@
           }
         }
       }
+    },
+    "/comments/{comment_id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/comment_id"
+        }
+      ],
+      "get": {
+        "tags": [
+          "Comments"
+        ],
+        "operationId": "get-details-of-an-comment",
+        "summary": "Get an comment details",
+        "description": "Get the details of an comment",
+        "security": [
+          {
+            "userApiKey": [
+
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/comment"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "The given account does not exist"
+          }
+        }
+      }
     }
   }
 }

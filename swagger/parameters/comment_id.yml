@@ -1,0 +1,6 @@
+in: path
+name: comment_id
+type: integer
+required: true
+description: The numeric ID of the comment
+

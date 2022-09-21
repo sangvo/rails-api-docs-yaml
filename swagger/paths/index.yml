@@ -13,3 +13,8 @@
 /comments:
   post:
     $ref: ./comments/create.yml
+/comments/{comment_id}:
+  parameters:
+    - $ref: "#/parameters/comment_id"
+  get:
+    $ref: './comments/show.yml'

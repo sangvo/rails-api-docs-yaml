@@ -1,4 +1,15 @@
+##  ---------- ERRORS ------------- ##
+## -------------------------------- ##
+bad_request_error:
+  $ref: ./error/bad_request.yml
 
-# Resource
-create_post_payload:
+##  ----------RESOURCE------------- ##
+## -------------------------------- ##
+post:
   refs: "./resource/post.yml"
+
+##  ---------- REQUEST------------- ##
+## -------------------------------- ##
+
+resource_create_payload:
+  $ref: "./request/post/create_payload.yml"

@@ -2,4 +2,4 @@
 
 /posts:
   post:
-    $ref: ./platform/accounts/create.yml
+    $ref: ./posts/create.yml

@@ -39,8 +39,81 @@
     }
   ],
   "definitions": {
-    "create_post_payload": {
+    "bad_request_error": {
+      "type": "object",
+      "required": [
+        "code",
+        "message"
+      ],
+      "properties": {
+        "code": {
+          "type": "integer",
+          "format": "int32"
+        },
+        "message": {
+          "type": "string"
+        }
+      }
+    },
+    "post": {
       "refs": "./resource/post.yml"
+    },
+    "resource_create_payload": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the post"
+        },
+        "title": {
+          "type": "string",
+          "description": "The title about post"
+        },
+        "content": {
+          "type": "text",
+          "description": "The content of post"
+        }
+      }
+    }
+  },
+  "paths": {
+    "/posts": {
+      "post": {
+        "tags": [
+          "Posts"
+        ],
+        "operationId": "create-an-post",
+        "summary": "Create an Post",
+        "description": "Create an Post",
+        "security": [
+          {
+            "userApiKey": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/resource_create_payload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/resource_create_payload"
+            }
+          },
+          "401": {
+            "description": "Unauthorized"
+          }
+        }
+      }
     }
   }
 }

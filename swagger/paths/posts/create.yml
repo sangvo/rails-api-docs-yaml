@@ -10,11 +10,11 @@ parameters:
     in: body
     required: true
     schema:
-      $ref: '#/definitions/create_post_payload'
+      $ref: '#/definitions/resource_create_payload'
 responses:
   200:
     description: Success
     schema:
-      $ref: '#/definitions/create_post_payload'
+      $ref: '#/definitions/resource_create_payload'
   401:
     description: Unauthorized

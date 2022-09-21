@@ -8,3 +8,8 @@
     - $ref: '#/parameters/post_id'
   patch:
     $ref: ./posts/update.yml
+
+# Comment
+/comments:
+  post:
+    $ref: ./comments/create.yml

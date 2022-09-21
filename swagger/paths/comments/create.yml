@@ -1,8 +1,8 @@
 tags:
-  - Posts
-operationId: create-an-post
-summary: Create an Post
-description: Create an Post
+  - Comments
+operationId: create-an-comment
+summary: Create an Comment
+description: Create an Comment
 security:
   - userApiKey: []
 parameters:
@@ -10,7 +10,7 @@ parameters:
     in: body
     required: true
     schema:
-      $ref: '#/definitions/request_comment_create_payload'
+      $ref: '#/definitions/request_post_create_payload'
 responses:
   200:
     description: Success
@@ -20,3 +20,4 @@ responses:
     description: Unauthorized
     schema:
       $ref: '#/definitions/bad_request_error'
+

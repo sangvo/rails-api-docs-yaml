@@ -7,11 +7,17 @@ bad_request_error:
 ## -------------------------------- ##
 post:
   $ref: "./resource/post.yml"
+comment:
+  $ref: "./resource/comment.yml"
 
 ##  ---------- REQUEST------------- ##
 ## -------------------------------- ##
 
-resource_post_create_payload:
+request_post_create_payload:
   $ref: "./request/post/create_payload.yml"
-resource_post_update_payload:
+request_post_update_payload:
   $ref: "./request/post/update_payload.yml"
+
+request_comment_create_payload:
+  $ref: "./request/comment/create_payload.yml"
+

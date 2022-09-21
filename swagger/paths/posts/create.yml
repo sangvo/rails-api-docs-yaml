@@ -18,3 +18,5 @@ responses:
       $ref: '#/definitions/resource_create_payload'
   401:
     description: Unauthorized
+    schema:
+      $ref: '#/definitions/bad_request_error'

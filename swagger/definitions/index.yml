@@ -1,7 +1,7 @@
 ##  ---------- ERRORS ------------- ##
 ## -------------------------------- ##
 bad_request_error:
-  $ref: ./error/bad_request.yml
+  $ref: "./error/bad_request.yml"
 
 ##  ----------RESOURCE------------- ##
 ## -------------------------------- ##

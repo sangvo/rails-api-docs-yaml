@@ -1,8 +1,8 @@
 tags:
   - Posts
-operationId: create-an-post
-summary: Create an Post
-description: Create an Post
+operationId: update-an-post
+summary: Update an Post
+description: Update an Post
 security:
   - userApiKey: []
 parameters:
@@ -10,7 +10,7 @@ parameters:
     in: body
     required: true
     schema:
-      $ref: '#/definitions/resource_post_create_payload'
+      $ref: '#/definitions/resource_post_update_payload'
 responses:
   200:
     description: Success
@@ -20,3 +20,4 @@ responses:
     description: Unauthorized
     schema:
       $ref: '#/definitions/bad_request_error'
+

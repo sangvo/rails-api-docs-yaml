@@ -3,3 +3,8 @@
 /posts:
   post:
     $ref: ./posts/create.yml
+/posts/{post_id}:
+  parameters:
+    - $ref: '#/parameters/post_id'
+  patch:
+    $ref: ./posts/update.yml

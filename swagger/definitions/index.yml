@@ -6,10 +6,12 @@ bad_request_error:
 ##  ----------RESOURCE------------- ##
 ## -------------------------------- ##
 post:
-  refs: "./resource/post.yml"
+  $ref: "./resource/post.yml"
 
 ##  ---------- REQUEST------------- ##
 ## -------------------------------- ##
 
-resource_create_payload:
+resource_post_create_payload:
   $ref: "./request/post/create_payload.yml"
+resource_post_update_payload:
+  $ref: "./request/post/update_payload.yml"

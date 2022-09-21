@@ -28,5 +28,8 @@ security:
 definitions:
   $ref: ./definitions/index.yml
 
+parameters:
+  $ref: ./parameters/index.yml
+
 paths:
   $ref: ./paths/index.yml

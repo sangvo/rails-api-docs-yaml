@@ -1,0 +1,2 @@
+post_id:
+  $ref: ./post_id.yml

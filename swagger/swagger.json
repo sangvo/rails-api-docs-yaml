@@ -56,9 +56,29 @@
       }
     },
     "post": {
-      "refs": "./resource/post.yml"
+      "type": "object",
+      "required": [
+        "id",
+        "name",
+        "title"
+      ],
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "name": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "content": {
+          "type": "text"
+        }
+      }
     },
-    "resource_create_payload": {
+    "resource_post_create_payload": {
       "type": "object",
       "properties": {
         "name": {
@@ -74,6 +94,28 @@
           "description": "The content of post"
         }
       }
+    },
+    "resource_post_update_payload": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Update title"
+        },
+        "content": {
+          "type": "text",
+          "description": "Update description"
+        }
+      }
+    }
+  },
+  "parameters": {
+    "post_id": {
+      "in": "path",
+      "name": "post_id",
+      "type": "integer",
+      "required": true,
+      "description": "The numeric ID of the post"
     }
   },
   "paths": {
@@ -98,7 +140,7 @@
             "in": "body",
             "required": true,
             "schema": {
-              "$ref": "#/definitions/resource_create_payload"
+              "$ref": "#/definitions/resource_post_create_payload"
             }
           }
         ],
@@ -106,7 +148,53 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/resource_create_payload"
+              "$ref": "#/definitions/post"
+            }
+          },
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "$ref": "#/definitions/bad_request_error"
+            }
+          }
+        }
+      }
+    },
+    "/posts/{post_id}": {
+      "parameters": [
+        {
+          "$ref": "#/parameters/post_id"
+        }
+      ],
+      "patch": {
+        "tags": [
+          "Posts"
+        ],
+        "operationId": "update-an-post",
+        "summary": "Update an Post",
+        "description": "Update an Post",
+        "security": [
+          {
+            "userApiKey": [
+
+            ]
+          }
+        ],
+        "parameters": [
+          {
+            "name": "data",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/resource_post_update_payload"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/post"
             }
           },
           "401": {
